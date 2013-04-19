@@ -1,0 +1,18 @@
+=====================================================
+
+GraphVisual
+
+Caner Derici
+caner.derici@boun.edu.tr
+
+=====================================================
+
+GraphVisual is a tool written in Racket to produce 
+visual representation of a graph. It also includes 
+functionalities for 
+
+- random graph generation, and
+- a small api for using this in 2htdp/universe 
+animations.
+
+See docs for more detailed discussion.

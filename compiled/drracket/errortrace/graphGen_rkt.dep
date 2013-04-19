@@ -1,0 +1,1 @@
+("5.3.4.1" ("ee12d12492f671c57ca8a09b8f0406be6fd023fc" . "ceac4d4d14607fde409bc19a4d89cb24de08e3f0") (collects #"racket" #"main.rkt") #"/home/caner/fun/racket/graphVisual/defs.rkt" (collects #"2htdp" #"image.rkt") (collects #"racket" #"lang" #"reader.rkt"))
