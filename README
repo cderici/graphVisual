@@ -11,8 +11,8 @@ GraphVisual is a tool written in Racket to produce
 visual representation of a graph. It also includes 
 functionalities for 
 
-- random graph generation, and
-- a small api for using this in 2htdp/universe 
+- Random graph generation, and
+- A small api for using this in 2htdp/universe 
 animations.
 
 Kindly note that this project is work in progress. 
@@ -20,4 +20,4 @@ The documentation will be complete as soon as
 possible. However, you can see and run the 
 examples for a first impression on how to use it.
 
-See docs for more detailed discussion.
+See docs for more detailed discussion. 
