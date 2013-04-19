@@ -35,9 +35,30 @@ The code is seperated into five distinct parts:
              
 @section[#:tag "valid"]{Validating Graph Representations}
 
+Primary function responsible for the validity of a graph representation is:
+
+@defproc[(check-graph [g graph?]) boolean?]{Checks if ;
+@itemlist[@item{the vertex labels in V are valid (number or symbol)}
+           @item{the vertices in edges are really the ones in V}
+           @item{there are no duplicate vertices (with the same label)}
+           @item{there are no duplicate edges (with same source/dest)}]
+}
+
+The main reason for this function is to be able to validate the graphs generated either manually or by using @italic{make-random-graph}.
+
 @section[#:tag "draw"]{Drawing Graphs}
 
+Here's an example:
+
+@(image "exampleGraphImage.png")
+
 @section[#:tag "rand"]{Generating Random Graphs}
+
+@defproc[(make-random-graph [n-nodes number?]
+                            [n-edges number?]
+                            [weighted? boolean?]
+                            [directed? boolean?]
+                            [max-weight* number?]) graph?]{Produces a random graph with the given number of nodes and the number of edges. Weights are choosen randomly within the range [0..max-weight].}
 
 @section[#:tag "anim"]{Animating Graphs}
 

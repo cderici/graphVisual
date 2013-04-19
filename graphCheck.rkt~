@@ -7,9 +7,9 @@
 ;; check-graph : graph -> boolean
 ;; checks if
 ;; - the vertex labels are valid (number or symbol)
-;; - the vertices in edges are really the ones in V
 ;; - there are no duplicate vertices (with same label)
 ;; - there are no duplicate edges (with same source/dest, different weight)
+;; - vertex labels in edges are valid
 (define (check-graph g)
   (let*
       ((labels (map vertex-label (graph-V g)))
@@ -19,10 +19,10 @@
       ;((begin (display "checking graph representation...") false) 'dummy)
       ((not (vertex-labels-ok? labels))
        "vertex labels are not valid")
-      ((edges-are-legit? labels (append edge-sources edge-dests))
-       "there are vertices in edges that are not in V")
       ((not (unique-vertices? labels))
        "there are duplicate vertices")
+      ;((not (edge-points-ok? labels edge-sources edge-dests))
+      ; "vertex labels in edges are not valid")
       ((not (no-duplicates? (map list edge-sources edge-dests)))
        "there are duplicate edges")
       (else
@@ -30,11 +30,6 @@
               true
       ;        )
       ))))
-
-;; edges-are-legit? : (listof label) (listof label) -> boolean
-(define (edges-are-legit? labels labels-from-edges)
-  (null? 
-   (filter (lambda (edge-label) (member edge-label labels)) labels-from-edges)))
 
 ;; vertex-labels-ok? : (listof label) -> boolean
 ;; Checks if the given labels are either numbers or symbols
